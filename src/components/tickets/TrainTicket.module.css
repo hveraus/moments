@@ -1,0 +1,128 @@
+.ticket {
+  width: 420px;
+  background: linear-gradient(135deg, #f5f0e8 0%, #ebe5d9 100%);
+  border-radius: 4px;
+  padding: 24px;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2e7d32, #4caf50, #2e7d32);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge {
+  background: #2e7d32;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.trainNo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.trainName {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.trainNameEn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 12px 0;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+}
+
+.station {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stationLabel {
+  font-size: 0.65rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.stationName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.6rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.detailValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+}

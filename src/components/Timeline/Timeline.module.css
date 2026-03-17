@@ -1,0 +1,112 @@
+.timeline {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 0 16px 12px;
+}
+
+/* Vertical line */
+.line {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: var(--color-social);
+  opacity: 0.3;
+}
+
+/* List */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Each item */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* Dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-social);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.dot:hover {
+  border-color: var(--color-social-hover);
+  transform: scale(1.3);
+}
+
+.dot.active {
+  background: var(--color-title);
+  border-color: var(--color-title);
+  box-shadow: 0 0 8px 2px var(--color-card-shadow);
+  transform: scale(1.3);
+}
+
+/* Label */
+.label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  max-width: 100px;
+}
+
+.label:hover {
+  background: var(--color-sort-bg);
+}
+
+.label.active .place {
+  color: var(--color-title);
+  font-weight: 600;
+}
+
+.place {
+  font-family: 'LXGW WenKai', serif;
+  font-size: 0.7rem;
+  color: var(--color-social);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--color-meta);
+  opacity: 0.7;
+  line-height: 1.3;
+}
+
+/* ── Hide on very small screens ── */
+@media (max-width: 520px) {
+  .timeline {
+    display: none;
+  }
+}

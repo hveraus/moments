@@ -1,0 +1,96 @@
+.ticket {
+  width: 280px;
+  background: #faf7f0;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.border {
+  border: 2px solid #c9a96e;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.inner {
+  border: 1px solid #e0d5c0;
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(180deg, #fdfbf6 0%, #f8f3ea 100%);
+}
+
+.topDecor,
+.bottomDecor {
+  font-size: 0.7rem;
+  color: #c9a96e;
+  letter-spacing: 0.5em;
+  margin-bottom: 16px;
+}
+
+.bottomDecor {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+.templeName {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c1810;
+  margin-bottom: 4px;
+  letter-spacing: 0.1em;
+}
+
+.templeNameEn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.65rem;
+  color: #999;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: #c9a96e;
+  margin: 0 auto 16px;
+}
+
+.type {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  color: #5a3e28;
+  margin-bottom: 2px;
+}
+
+.typeEn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.6rem;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-family: 'LXGW WenKai', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #8b4513;
+  margin-bottom: 8px;
+}
+
+.date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.blessing {
+  font-family: 'LXGW WenKai', serif;
+  font-size: 0.75rem;
+  color: #c9a96e;
+  letter-spacing: 0.15em;
+  border-top: 1px solid #e8dcc8;
+  padding-top: 12px;
+  margin-top: 4px;
+}

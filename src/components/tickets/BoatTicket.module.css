@@ -1,0 +1,100 @@
+.ticket {
+  width: 360px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: 'Noto Sans SC', sans-serif;
+  position: relative;
+}
+
+.wave {
+  height: 6px;
+  background: linear-gradient(90deg, #0277bd, #4fc3f7, #0277bd, #4fc3f7, #0277bd);
+  background-size: 120px 6px;
+}
+
+.content {
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.boatName {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.boatNameEn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.route {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.flag {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #0277bd;
+  background: #e1f5fe;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.6rem;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.detailValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed #ddd;
+  padding-top: 12px;
+}
+
+.ticketNo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: #ccc;
+}
+
+.price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0277bd;
+}

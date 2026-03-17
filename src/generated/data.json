@@ -1,0 +1,435 @@
+{
+  "site": {
+    "title": "Moments in Light",
+    "subtitle": "用票根记录每一段旅程",
+    "social": {
+      "github": "https://github.com/your-username",
+      "twitter": "https://x.com/your-handle",
+      "email": "your@email.com"
+    }
+  },
+  "trips": [
+    {
+      "title": "新加坡",
+      "country": "新加坡",
+      "startDate": "2026-02-20T00:00:00.000Z",
+      "endDate": "2026-02-24T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "sg-zoo",
+          "template": "museum-ticket",
+          "title": "新加坡动物园",
+          "description": "世界十大动物园之一，开放式的设计让动物们在接近自然的环境中生活，可以和红毛猩猩一起吃早餐！",
+          "photos": [],
+          "data": {
+            "museumName": "新加坡动物园",
+            "museumNameEn": "Singapore Zoo",
+            "type": "入园券",
+            "typeEn": "Admission",
+            "category": "儿童",
+            "price": "S$38",
+            "date": "2026-02-21",
+            "time": "08:30 - 18:00",
+            "ticketNo": "No. SZO-20260221-3456"
+          }
+        },
+        {
+          "id": "sg-flyer",
+          "template": "ropeway-ticket",
+          "title": "新加坡摩天轮",
+          "description": "亚洲最大的摩天观景轮，高165米，旋转一圈约30分钟。夜幕降临时可以俯瞰整个滨海湾的璀璨灯火。",
+          "photos": [],
+          "data": {
+            "name": "新加坡摩天观景轮",
+            "nameEn": "Singapore Flyer",
+            "type": "乘坐券",
+            "typeEn": "Ride Ticket",
+            "category": "儿童",
+            "price": "S$28",
+            "date": "2026-02-22",
+            "time": "19:30",
+            "ticketNo": "No. SFL-20260222-1892"
+          }
+        },
+        {
+          "id": "sg-mrt",
+          "template": "transit-card",
+          "title": "游客通行证",
+          "description": "新加坡地铁游客通行证，三天内无限次乘坐地铁和公交。绿色的小卡片上印着鱼尾狮，是很好的旅行纪念。",
+          "photos": [],
+          "data": {
+            "cardName": "新加坡游客通行证",
+            "cardNameEn": "Singapore Tourist Pass",
+            "type": "三日票",
+            "typeEn": "3-Day Pass",
+            "price": "S$20",
+            "validFrom": "2026-02-20",
+            "validTo": "2026-02-22",
+            "cardNo": "STP-20260220-8877"
+          }
+        },
+        {
+          "id": "sg-river",
+          "template": "boat-ticket",
+          "title": "新加坡河游船",
+          "description": "沿着新加坡河乘坐游船，从克拉码头出发，经过驳船码头，最后到达滨海湾。河两岸的老建筑和摩天大楼交相辉映。",
+          "photos": [],
+          "data": {
+            "boatName": "新加坡河游船",
+            "boatNameEn": "Singapore River Cruise",
+            "route": "克拉码头 → 滨海湾",
+            "routeEn": "Clarke Quay → Marina Bay",
+            "date": "2026-02-22",
+            "time": "18:00",
+            "price": "S$25",
+            "seat": "A12",
+            "ticketNo": "No. SRC-20260222-0551"
+          }
+        }
+      ],
+      "slug": "2026-02-singapore"
+    },
+    {
+      "title": "上海迪士尼",
+      "country": "中国",
+      "startDate": "2026-02-14T00:00:00.000Z",
+      "endDate": "2026-02-16T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "disney-park",
+          "template": "museum-ticket",
+          "title": "迪士尼乐园",
+          "description": "上海迪士尼乐园，全球第六座迪士尼主题乐园。奇幻童话城堡是全球最高最大的迪士尼城堡，夜晚的烟花秀美轮美奂。",
+          "photos": [],
+          "data": {
+            "museumName": "上海迪士尼乐园",
+            "museumNameEn": "Shanghai Disneyland",
+            "type": "一日票",
+            "typeEn": "One-Day Pass",
+            "category": "儿童",
+            "price": "¥399",
+            "date": "2026-02-14",
+            "time": "08:30 - 21:00",
+            "ticketNo": "No. SDL-20260214-08832"
+          }
+        },
+        {
+          "id": "disney-train",
+          "template": "train-ticket",
+          "title": "迪士尼专线",
+          "description": "上海地铁11号线迪士尼专列，车厢内装饰着米奇和迪士尼角色，连座椅都是米奇头形状，还没到乐园就已经开始快乐了。",
+          "photos": [],
+          "data": {
+            "trainName": "上海地铁11号线",
+            "trainNameEn": "Shanghai Metro Line 11",
+            "from": "南京东路",
+            "to": "迪士尼",
+            "date": "2026-02-14",
+            "time": "07:45",
+            "car": "迪士尼专列",
+            "seat": "无座",
+            "price": "¥7",
+            "ticketNo": "No. 112602140001"
+          }
+        },
+        {
+          "id": "disney-certificate",
+          "template": "certificate",
+          "title": "公主证书",
+          "description": "在迪士尼奇妙仙子美发沙龙获得的小公主认证书，化了美美的公主妆，戴上了闪闪的皇冠。",
+          "photos": [],
+          "data": {
+            "title": "公主认证书",
+            "titleEn": "Princess Certificate",
+            "shrine": "奇妙仙子美发沙龙",
+            "shrineEn": "Bibbidi Bobbidi Boutique",
+            "date": "二〇二六年二月十四日",
+            "dateWestern": "2026-02-14",
+            "message": "特此认证，已正式加冕成为迪士尼小公主，愿永远保持善良与勇气。"
+          }
+        }
+      ],
+      "slug": "2026-02-disney"
+    },
+    {
+      "title": "杭州",
+      "country": "中国",
+      "startDate": "2026-01-17T00:00:00.000Z",
+      "endDate": "2026-01-19T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "hz-westlake-boat",
+          "template": "boat-ticket",
+          "title": "西湖游船",
+          "description": "泛舟西湖之上，远眺雷峰塔，近看三潭印月。冬日的西湖别有一番韵味，薄雾笼罩，宛如水墨画卷。",
+          "photos": [],
+          "data": {
+            "boatName": "西湖游船",
+            "boatNameEn": "West Lake Cruise",
+            "route": "湖滨码头 → 三潭印月 → 中山公园",
+            "routeEn": "Hubin Pier → Three Pools → Zhongshan Park",
+            "date": "2026-01-17",
+            "time": "10:30",
+            "price": "¥55",
+            "seat": "B08",
+            "ticketNo": "No. WLC-20260117-2234"
+          }
+        },
+        {
+          "id": "hz-lingyin",
+          "template": "temple-ticket",
+          "title": "灵隐寺",
+          "description": "始建于东晋的千年古刹，杭州最古老的佛教寺院。飞来峰上遍布石刻造像，大雄宝殿内的释迦牟尼佛像庄严肃穆。",
+          "photos": [],
+          "data": {
+            "templeName": "灵隐寺",
+            "templeNameEn": "Lingyin Temple",
+            "type": "参观券",
+            "typeEn": "Admission Ticket",
+            "price": "¥75",
+            "date": "2026-01-18",
+            "blessing": "菩提禅心・福慧双增"
+          }
+        },
+        {
+          "id": "hz-museum",
+          "template": "museum-ticket",
+          "title": "中国丝绸博物馆",
+          "description": "世界上最大的丝绸专题博物馆，展示了五千年中国丝绸文明。亲手体验了缫丝和织布，感受古人的智慧。",
+          "photos": [],
+          "data": {
+            "museumName": "中国丝绸博物馆",
+            "museumNameEn": "China National Silk Museum",
+            "type": "入馆券",
+            "typeEn": "Admission",
+            "category": "免费",
+            "price": "免费",
+            "date": "2026-01-18",
+            "time": "09:00 - 17:00",
+            "ticketNo": "No. NSM-20260118-0088"
+          }
+        }
+      ],
+      "slug": "2026-01-hangzhou"
+    },
+    {
+      "title": "京都",
+      "country": "日本",
+      "startDate": "2025-04-05T00:00:00.000Z",
+      "endDate": "2025-04-10T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "arashiyama-train",
+          "template": "train-ticket",
+          "title": "岚山小火车",
+          "description": "嵯峨野观光铁道，沿着保津川峡谷缓缓行驶，春天樱花飘落车窗，是京都最浪漫的铁路旅程。",
+          "photos": [],
+          "data": {
+            "trainName": "嵯峨野観光鉄道",
+            "trainNameEn": "Sagano Scenic Railway",
+            "from": "トロッコ嵯峨",
+            "to": "トロッコ亀岡",
+            "date": "2025-04-06",
+            "time": "10:30",
+            "car": "5号車",
+            "seat": "12A",
+            "price": "¥880",
+            "ticketNo": "No. 038421"
+          }
+        },
+        {
+          "id": "kinkakuji",
+          "template": "temple-ticket",
+          "title": "金阁寺",
+          "description": "正式名称鹿苑寺，因舍利殿外墙以金箔装饰而得名。倒映在镜湖池中的金色楼阁，是京都最具代表性的景观。",
+          "photos": [],
+          "data": {
+            "templeName": "鹿苑寺（金閣寺）",
+            "templeNameEn": "Kinkaku-ji Temple",
+            "type": "参拝券",
+            "typeEn": "Admission Ticket",
+            "price": "¥500",
+            "date": "2025-04-07",
+            "blessing": "開運招福・家内安全"
+          }
+        },
+        {
+          "id": "railway-museum",
+          "template": "museum-ticket",
+          "title": "京都铁道博物馆",
+          "description": "日本最大的铁道博物馆，收藏了从蒸汽机车到新干线的53辆实物列车，是铁道迷的圣地。",
+          "photos": [],
+          "data": {
+            "museumName": "京都鉄道博物館",
+            "museumNameEn": "Kyoto Railway Museum",
+            "type": "入館券",
+            "typeEn": "Admission",
+            "category": "一般",
+            "price": "¥1,200",
+            "date": "2025-04-08",
+            "time": "10:00 - 17:00",
+            "ticketNo": "No. KRM-20250408-1542"
+          }
+        },
+        {
+          "id": "fushimi-inari",
+          "template": "certificate",
+          "title": "伏见稻荷大社",
+          "description": "以千本�的朱红鸟居闻名于世的稻荷神社总本宫，从山脚到山顶约有一万座鸟居，是京都最受欢迎的神社。",
+          "photos": [],
+          "data": {
+            "title": "参拝証明書",
+            "titleEn": "Visit Certificate",
+            "shrine": "伏見稲荷大社",
+            "shrineEn": "Fushimi Inari Taisha",
+            "date": "令和七年四月八日",
+            "dateWestern": "2025-04-08",
+            "message": "千本鳥居を歩き、稲荷山を登拝されたことを証明いたします。"
+          }
+        }
+      ],
+      "slug": "2025-04-kyoto"
+    },
+    {
+      "title": "北京",
+      "country": "中国",
+      "startDate": "2025-02-01T00:00:00.000Z",
+      "endDate": "2025-02-05T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "forbidden-city",
+          "template": "museum-ticket",
+          "title": "故宫博物院",
+          "description": "明清两代的皇家宫殿，世界上现存规模最大、保存最完整的木质结构古建筑群，藏品超过186万件。",
+          "photos": [],
+          "data": {
+            "museumName": "故宫博物院",
+            "museumNameEn": "The Palace Museum",
+            "type": "门票",
+            "typeEn": "Admission",
+            "category": "成人",
+            "price": "¥60",
+            "date": "2025-02-02",
+            "time": "08:30 - 17:00",
+            "ticketNo": "No. PM-20250202-089431"
+          }
+        },
+        {
+          "id": "great-wall-cable",
+          "template": "ropeway-ticket",
+          "title": "八达岭长城缆车",
+          "description": "乘坐缆车登上八达岭长城北段，俯瞰蜿蜒的城墙在山脊上延伸，冬日的长城银装素裹别有一番壮美。",
+          "photos": [],
+          "data": {
+            "name": "八达岭长城索道",
+            "nameEn": "Badaling Great Wall Cable Car",
+            "type": "往返票",
+            "typeEn": "Round Trip",
+            "category": "成人",
+            "price": "¥140",
+            "date": "2025-02-03",
+            "time": "14:20",
+            "ticketNo": "No. BDL-20250203-4521"
+          }
+        },
+        {
+          "id": "beijing-highspeed",
+          "template": "train-ticket",
+          "title": "京张高铁",
+          "description": "世界首条智能高铁线路，穿越燕山山脉，设有全球最深的八达岭长城站，从北京北站到张家口仅需47分钟。",
+          "photos": [],
+          "data": {
+            "trainName": "京张高速铁路",
+            "trainNameEn": "Beijing-Zhangjiakou HSR",
+            "from": "北京北",
+            "to": "张家口",
+            "date": "2025-02-03",
+            "time": "08:15",
+            "car": "03车",
+            "seat": "06F",
+            "price": "¥174",
+            "ticketNo": "G8811"
+          }
+        },
+        {
+          "id": "temple-of-heaven",
+          "template": "temple-ticket",
+          "title": "天坛公园",
+          "description": "明清两代帝王祭天祈谷的神圣场所，祈年殿三重檐攒尖顶的壮丽造型是北京的标志性建筑之一。",
+          "photos": [],
+          "data": {
+            "templeName": "天坛公园",
+            "templeNameEn": "Temple of Heaven",
+            "type": "联票",
+            "typeEn": "Combo Ticket",
+            "price": "¥34",
+            "date": "2025-02-04",
+            "blessing": "风调雨顺・国泰民安"
+          }
+        }
+      ],
+      "slug": "2025-02-beijing"
+    },
+    {
+      "title": "曼谷",
+      "country": "泰国",
+      "startDate": "2024-12-20T00:00:00.000Z",
+      "endDate": "2024-12-25T00:00:00.000Z",
+      "tickets": [
+        {
+          "id": "grand-palace",
+          "template": "museum-ticket",
+          "title": "大皇宫",
+          "description": "曼谷王朝的象征，融合泰式与欧式建筑风格的皇家宫殿群，玉佛寺中供奉着泰国最神圣的玉佛。",
+          "photos": [],
+          "data": {
+            "museumName": "พระบรมมหาราชวัง",
+            "museumNameEn": "The Grand Palace",
+            "type": "บัตรเข้าชม",
+            "typeEn": "Admission Ticket",
+            "category": "Foreign Tourist",
+            "price": "฿500",
+            "date": "2024-12-21",
+            "time": "08:30 - 15:30",
+            "ticketNo": "No. GP-20241221-12087"
+          }
+        },
+        {
+          "id": "chao-phraya",
+          "template": "boat-ticket",
+          "title": "湄南河快船",
+          "description": "沿湄南河穿梭于曼谷古城与新城之间，河风拂面，两岸寺庙金顶在阳光下闪耀，是体验曼谷水上生活的最佳方式。",
+          "photos": [],
+          "data": {
+            "boatName": "เรือด่วนเจ้าพระยา",
+            "boatNameEn": "Chao Phraya Express Boat",
+            "route": "Sathorn → Tha Tien",
+            "flag": "Orange Flag",
+            "price": "฿16",
+            "date": "2024-12-21",
+            "time": "09:45",
+            "ticketNo": "CPB-88421"
+          }
+        },
+        {
+          "id": "bts-ticket",
+          "template": "transit-card",
+          "title": "BTS 轻轨一日票",
+          "description": "曼谷空中轻轨系统，穿行于高架轨道之上，是避开曼谷拥堵交通的最佳选择，车站设计现代而高效。",
+          "photos": [],
+          "data": {
+            "systemName": "BTS SkyTrain",
+            "systemNameTh": "รถไฟฟ้า BTS",
+            "type": "One-Day Pass",
+            "typeTh": "บัตรเดินทางรายวัน",
+            "price": "฿140",
+            "date": "2024-12-22",
+            "validUntil": "2024-12-22 23:59",
+            "cardNo": "BTS-1D-20241222-3847"
+          }
+        }
+      ],
+      "slug": "2024-12-bangkok"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+/* ── Theme CSS Variables ── */
+:root,
+[data-theme="night"] {
+  --color-title: #fff;
+  --color-subtitle: rgba(255, 255, 255, 0.6);
+  --color-social: rgba(255, 255, 255, 0.5);
+  --color-social-hover: rgba(255, 255, 255, 0.9);
+  --color-meta: rgba(255, 255, 255, 0.5);
+  --color-tooltip: rgba(255, 255, 255, 0.5);
+  --color-sort-bg: rgba(255, 255, 255, 0.08);
+  --color-sort-text: rgba(255, 255, 255, 0.5);
+  --color-sort-hover: rgba(255, 255, 255, 0.8);
+  --color-sort-active-bg: rgba(255, 255, 255, 0.15);
+  --color-sort-active-text: #fff;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+  --color-card-border: rgba(255, 255, 255, 0.05);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.5);
+  --color-card-border-hover: rgba(255, 255, 255, 0.1);
+  --color-scroll-thumb: rgba(255, 255, 255, 0.15);
+  --color-scroll-thumb-hover: rgba(255, 255, 255, 0.25);
+  --bg-body: #0b0e1a;
+  --color-text: rgb(224, 224, 224);
+}
+
+[data-theme="day"] {
+  --color-title: #2c3e50;
+  --color-subtitle: rgba(44, 62, 80, 0.6);
+  --color-social: rgba(44, 62, 80, 0.45);
+  --color-social-hover: rgba(44, 62, 80, 0.85);
+  --color-meta: rgba(44, 62, 80, 0.5);
+  --color-tooltip: rgba(44, 62, 80, 0.5);
+  --color-sort-bg: rgba(255, 255, 255, 0.4);
+  --color-sort-text: rgba(44, 62, 80, 0.5);
+  --color-sort-hover: rgba(44, 62, 80, 0.8);
+  --color-sort-active-bg: rgba(255, 255, 255, 0.7);
+  --color-sort-active-text: #2c3e50;
+  --color-card-shadow: rgba(0, 50, 100, 0.15);
+  --color-card-border: rgba(255, 255, 255, 0.2);
+  --color-card-shadow-hover: rgba(0, 50, 100, 0.25);
+  --color-card-border-hover: rgba(255, 255, 255, 0.35);
+  --color-scroll-thumb: rgba(0, 50, 100, 0.15);
+  --color-scroll-thumb-hover: rgba(0, 50, 100, 0.25);
+  --bg-body: #87ceeb;
+  --color-text: #2c3e50;
+}
+
+:root {
+  font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-body);
+  overflow-x: hidden;
+  transition: background 0.6s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scroll-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scroll-thumb-hover);
+}

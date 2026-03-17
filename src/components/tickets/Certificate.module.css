@@ -1,0 +1,102 @@
+.ticket {
+  width: 340px;
+  background: #fffef8;
+  padding: 6px;
+}
+
+.borderOuter {
+  border: 2px solid #8b0000;
+  padding: 4px;
+}
+
+.borderInner {
+  border: 1px solid #daa520;
+  padding: 4px;
+}
+
+.content {
+  padding: 32px 24px;
+  text-align: center;
+  background: linear-gradient(180deg, #fffef8 0%, #fdf8ee 100%);
+}
+
+.titleJa {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c1810;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.titleEn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.6rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.ornament {
+  color: #daa520;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.shrine {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.shrineEn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.6rem;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-family: 'LXGW WenKai', serif;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #444;
+  margin: 0 0 20px;
+  text-align: justify;
+}
+
+.dateSection {
+  margin-bottom: 16px;
+}
+
+.dateJa {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.dateWestern {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #c0392b;
+  border-radius: 50%;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c0392b;
+  margin-top: 8px;
+  opacity: 0.7;
+  transform: rotate(-15deg);
+}

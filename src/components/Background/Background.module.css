@@ -1,0 +1,397 @@
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════
+   NIGHT THEME — Deep sea starry sky
+   ══════════════════════════════════════ */
+
+.nightBase {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #0b0e1a 0%,
+    #0f1528 15%,
+    #111b35 30%,
+    #132244 50%,
+    #0f1d3a 70%,
+    #0a1628 85%,
+    #070d1a 100%
+  );
+}
+
+/* Aurora / nebula glow layers */
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+  mix-blend-mode: screen;
+}
+
+.aurora1 {
+  top: -15%;
+  left: 10%;
+  width: 70vw;
+  height: 40vh;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    rgba(80, 200, 220, 0.6) 0%,
+    rgba(60, 180, 200, 0.3) 30%,
+    rgba(40, 160, 200, 0.1) 60%,
+    transparent 80%
+  );
+  animation: auroraDrift1 25s ease-in-out infinite;
+}
+
+.aurora2 {
+  top: 5%;
+  right: -10%;
+  width: 50vw;
+  height: 35vh;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(160, 100, 240, 0.5) 0%,
+    rgba(140, 80, 220, 0.25) 35%,
+    rgba(120, 60, 200, 0.08) 65%,
+    transparent 85%
+  );
+  animation: auroraDrift2 30s ease-in-out infinite;
+}
+
+.aurora3 {
+  top: 35%;
+  left: -5%;
+  width: 55vw;
+  height: 30vh;
+  background: radial-gradient(
+    ellipse at 45% 50%,
+    rgba(220, 120, 180, 0.4) 0%,
+    rgba(200, 100, 160, 0.2) 35%,
+    rgba(180, 80, 150, 0.06) 65%,
+    transparent 85%
+  );
+  animation: auroraDrift1 35s ease-in-out infinite reverse;
+}
+
+.aurora4 {
+  bottom: -10%;
+  left: 20%;
+  width: 60vw;
+  height: 35vh;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(40, 120, 200, 0.45) 0%,
+    rgba(30, 100, 180, 0.2) 35%,
+    rgba(20, 80, 160, 0.06) 65%,
+    transparent 85%
+  );
+  animation: auroraDrift2 28s ease-in-out infinite;
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.starTiny  { width: 1px;   height: 1px;   opacity: 0.5; }
+.starSmall { width: 2px;   height: 2px;   opacity: 0.6; animation: twinkle 4s ease-in-out infinite; }
+.starMed   { width: 2.5px; height: 2.5px; opacity: 0.8; box-shadow: 0 0 4px 1px rgba(200, 220, 255, 0.4); animation: twinkle 3.5s ease-in-out infinite; }
+.starBright { width: 3px;  height: 3px;   opacity: 0.9; box-shadow: 0 0 6px 2px rgba(200, 220, 255, 0.5); animation: twinkleBright 5s ease-in-out infinite; }
+
+/* Star positions */
+.st1  { top: 5%;  left: 12%; } .st2  { top: 8%;  left: 45%; } .st3  { top: 3%;  left: 72%; }
+.st4  { top: 12%; left: 28%; } .st5  { top: 15%; left: 88%; } .st6  { top: 7%;  left: 60%; }
+.st7  { top: 18%; left: 8%;  } .st8  { top: 22%; left: 35%; } .st9  { top: 10%; left: 92%; }
+.st10 { top: 25%; left: 55%; } .st11 { top: 20%; left: 78%; } .st12 { top: 28%; left: 15%; }
+.st13 { top: 32%; left: 42%; } .st14 { top: 16%; left: 50%; } .st15 { top: 35%; left: 70%; }
+.st16 { top: 38%; left: 5%;  } .st17 { top: 30%; left: 85%; } .st18 { top: 42%; left: 22%; }
+.st19 { top: 45%; left: 62%; } .st20 { top: 40%; left: 95%; } .st21 { top: 48%; left: 38%; }
+.st22 { top: 52%; left: 80%; } .st23 { top: 55%; left: 10%; } .st24 { top: 58%; left: 48%; }
+.st25 { top: 50%; left: 72%; } .st26 { top: 62%; left: 30%; } .st27 { top: 65%; left: 90%; }
+.st28 { top: 68%; left: 18%; } .st29 { top: 72%; left: 55%; } .st30 { top: 60%; left: 65%; }
+.st31 { top: 75%; left: 40%; } .st32 { top: 78%; left: 85%; } .st33 { top: 82%; left: 12%; }
+.st34 { top: 85%; left: 60%; } .st35 { top: 80%; left: 35%; } .st36 { top: 88%; left: 75%; }
+.st37 { top: 90%; left: 25%; } .st38 { top: 92%; left: 50%; } .st39 { top: 95%; left: 8%;  }
+.st40 { top: 93%; left: 88%; }
+
+/* Twinkle delays */
+.d1 { animation-delay: 0s; }   .d2 { animation-delay: 0.5s; }
+.d3 { animation-delay: 1s; }   .d4 { animation-delay: 1.5s; }
+.d5 { animation-delay: 2s; }   .d6 { animation-delay: 2.5s; }
+.d7 { animation-delay: 3s; }   .d8 { animation-delay: 3.5s; }
+
+/* Shooting stars */
+.shootingStar {
+  position: absolute;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+  border-radius: 1px;
+  opacity: 0;
+  animation: shoot 8s ease-in infinite;
+}
+.shootingStar1 { top: 12%; left: 30%; transform: rotate(-25deg); animation-delay: 2s; }
+.shootingStar2 { top: 35%; left: 60%; transform: rotate(-30deg); animation-delay: 6s; animation-duration: 10s; }
+
+/* Night ocean waves */
+.waveNight1 {
+  height: 12vh;
+  fill: rgba(30, 80, 140, 0.15);
+  animation: waveDrift 20s ease-in-out infinite;
+}
+.waveNight2 {
+  height: 8vh;
+  fill: rgba(20, 60, 120, 0.12);
+  animation: waveDrift 16s ease-in-out infinite reverse;
+}
+
+
+/* ══════════════════════════════════════
+   DAY THEME — Bright ocean & sky
+   ══════════════════════════════════════ */
+
+.dayBase {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #87ceeb 0%,
+    #7ec8e3 10%,
+    #6bbfdd 25%,
+    #5ab5d6 40%,
+    #3ba8d0 55%,
+    #2e9dc6 65%,
+    #1a8bb8 75%,
+    #0f7aaa 85%,
+    #0a6e9e 100%
+  );
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 6%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 250, 200, 1) 0%,
+    rgba(255, 240, 150, 0.9) 25%,
+    rgba(255, 220, 100, 0.4) 50%,
+    rgba(255, 200, 60, 0.1) 70%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 40px 15px rgba(255, 240, 150, 0.4),
+    0 0 80px 30px rgba(255, 220, 100, 0.2),
+    0 0 150px 60px rgba(255, 200, 60, 0.1);
+}
+
+.sunRays {
+  position: absolute;
+  top: 6%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  animation: sunPulse 6s ease-in-out infinite;
+  box-shadow:
+    0 0 60px 25px rgba(255, 240, 150, 0.15),
+    0 0 120px 50px rgba(255, 230, 120, 0.08);
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  pointer-events: none;
+}
+
+.cloudBody {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50px;
+  box-shadow:
+    30px -15px 0 10px rgba(255, 255, 255, 0.7),
+    60px 0 0 5px rgba(255, 255, 255, 0.65),
+    -20px -5px 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.cloud1 {
+  top: 10%;
+  left: -5%;
+  width: 120px;
+  height: 40px;
+  animation: cloudDrift1 50s linear infinite;
+}
+
+.cloud2 {
+  top: 18%;
+  left: 30%;
+  width: 90px;
+  height: 30px;
+  opacity: 0.7;
+  animation: cloudDrift2 65s linear infinite;
+}
+
+.cloud3 {
+  top: 8%;
+  left: 60%;
+  width: 100px;
+  height: 35px;
+  opacity: 0.8;
+  animation: cloudDrift1 55s linear infinite;
+  animation-delay: -20s;
+}
+
+.cloud4 {
+  top: 25%;
+  left: 80%;
+  width: 80px;
+  height: 28px;
+  opacity: 0.6;
+  animation: cloudDrift2 70s linear infinite;
+  animation-delay: -30s;
+}
+
+/* Water sparkles (sun reflections) */
+.waterSparkles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  pointer-events: none;
+}
+
+.waterSparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 6px 2px rgba(255, 255, 220, 0.5);
+  animation: waterGlint 3s ease-in-out infinite;
+}
+
+.ws1 { bottom: 60%; left: 15%; animation-delay: 0s; animation-duration: 2.5s; }
+.ws2 { bottom: 45%; left: 35%; animation-delay: 0.8s; animation-duration: 3s; }
+.ws3 { bottom: 70%; left: 55%; animation-delay: 1.5s; animation-duration: 2.8s; }
+.ws4 { bottom: 30%; left: 72%; animation-delay: 0.3s; animation-duration: 3.2s; }
+.ws5 { bottom: 55%; left: 88%; animation-delay: 2s; animation-duration: 2.6s; }
+.ws6 { bottom: 40%; left: 48%; animation-delay: 1s; animation-duration: 3.5s; }
+.ws7 { bottom: 65%; left: 25%; animation-delay: 2.5s; animation-duration: 2.2s; }
+.ws8 { bottom: 50%; left: 65%; animation-delay: 0.5s; animation-duration: 3s; }
+
+/* Day ocean waves */
+.waveDay1 {
+  height: 18vh;
+  fill: rgba(10, 90, 160, 0.35);
+  animation: waveDrift 18s ease-in-out infinite;
+}
+.waveDay2 {
+  height: 14vh;
+  fill: rgba(15, 100, 170, 0.28);
+  animation: waveDrift 14s ease-in-out infinite reverse;
+}
+.waveDay3 {
+  height: 10vh;
+  fill: rgba(20, 110, 180, 0.2);
+  animation: waveDrift 22s ease-in-out infinite;
+}
+
+
+/* ══════════════════════════════════════
+   SHARED
+   ══════════════════════════════════════ */
+
+.oceanWave {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  pointer-events: none;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════ */
+
+@keyframes auroraDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  33%      { transform: translate(4%, 2%) scale(1.05); opacity: 0.3; }
+  66%      { transform: translate(-3%, -1%) scale(0.95); opacity: 0.2; }
+}
+
+@keyframes auroraDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  33%      { transform: translate(-4%, 1%) scale(0.96); opacity: 0.2; }
+  66%      { transform: translate(3%, -2%) scale(1.04); opacity: 0.3; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.8; }
+}
+
+@keyframes twinkleBright {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes shoot {
+  0%       { opacity: 0; transform: rotate(-25deg) translateX(0); }
+  2%       { opacity: 1; }
+  8%       { opacity: 0; transform: rotate(-25deg) translateX(200px); }
+  100%     { opacity: 0; }
+}
+
+@keyframes waveDrift {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(3%); }
+}
+
+@keyframes sunPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes cloudDrift1 {
+  0%   { transform: translateX(-150px); }
+  100% { transform: translateX(calc(100vw + 150px)); }
+}
+
+@keyframes cloudDrift2 {
+  0%   { transform: translateX(calc(100vw + 100px)); }
+  100% { transform: translateX(-200px); }
+}
+
+@keyframes waterGlint {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%      { opacity: 0.9; transform: scale(1.3); }
+}
