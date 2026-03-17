@@ -42,7 +42,7 @@ export function TicketDetail({ ticket, onClose }: TicketDetailProps) {
         )}
         {ticket.photos.length > 0 && (
           <div className={styles.photos}>
-            <p className={styles.photosLabel}>照片</p>
+            <p className={styles.photosLabel}>PHOTOS</p>
             <div className={styles.photoGrid}>
               {ticket.photos.map((photo, i) => (
                 <img key={i} src={photo} alt="" className={styles.photo} />
