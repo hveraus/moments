@@ -96,6 +96,29 @@
       "endDate": "2026-02-16T00:00:00.000Z",
       "tickets": [
         {
+          "id": "disney-entry",
+          "template": "disney-ticket",
+          "title": "上海迪士尼入园票",
+          "description": "情人节去了迪士尼！漫步梦幻世界，骑了小飞象和旋转木马，晚上的城堡烟花秀超级美，是最魔法的一天！",
+          "photos": [
+            "https://picsum.photos/seed/disney1/400/400",
+            "https://picsum.photos/seed/disney2/400/400",
+            "https://picsum.photos/seed/disney3/400/400",
+            "https://picsum.photos/seed/disney4/400/400"
+          ],
+          "data": {
+            "parkName": "上海迪士尼乐园",
+            "parkNameEn": "SHANGHAI DISNEYLAND",
+            "area": "梦幻世界",
+            "areaEn": "FANTASYLAND",
+            "type": "一日票",
+            "category": "儿童",
+            "price": "¥399",
+            "date": "2026-02-14",
+            "ticketNo": "No. SDL-20260214-08832"
+          }
+        },
+        {
           "id": "disney-park",
           "template": "museum-ticket",
           "title": "迪士尼乐园",

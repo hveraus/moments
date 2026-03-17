@@ -19,20 +19,23 @@
 
 .modal {
   position: relative;
-  background-color: #f7f2ea;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 27px,
-    rgba(180, 160, 120, 0.18) 27px,
-    rgba(180, 160, 120, 0.18) 28px
-  );
+  /* 粗纹理再生纸底色：温暖米棕 */
+  background-color: #e8dcc6;
+  /* SVG feTurbulence 模拟粗纸纤维纹理 */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23paper)' opacity='0.28'/%3E%3C/svg%3E"),
+    /* 额外一层低频大纹理，模拟纸张不均匀 */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='coarse'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.18' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23coarse)' opacity='0.12'/%3E%3C/svg%3E");
+  background-repeat: repeat, repeat;
+  background-size: 400px 400px, 600px 600px;
   border-radius: 16px;
   padding: 40px;
   max-width: 640px;
   width: 100%;
   animation: slideUp 0.3s ease;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  /* 轻微边缘不均匀感 */
+  border: 1px solid rgba(160, 130, 80, 0.25);
 }
 
 @keyframes slideUp {
@@ -78,7 +81,7 @@
   font-family: 'LXGW WenKai', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2c2018;
+  color: #1e1508;
   margin: 0 0 10px;
 }
 
@@ -86,13 +89,13 @@
   font-family: 'Noto Serif SC', serif;
   font-size: 0.95rem;
   line-height: 1.85;
-  color: #5a4a38;
+  color: #4a3820;
   font-style: italic;
   margin: 0 0 24px;
 }
 
 .photos {
-  border-top: 1px solid rgba(160, 130, 90, 0.2);
+  border-top: 1px solid rgba(140, 110, 60, 0.3);
   padding-top: 20px;
 }
 
