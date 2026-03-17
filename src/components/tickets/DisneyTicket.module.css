@@ -1,0 +1,473 @@
+/* ============================================================
+   DisneyTicket — 竖版入园票，仿 Nintendo World 大图风格
+   迪士尼深蓝 + 金色 + 夜空城堡 CSS 插画
+   ============================================================ */
+
+.ticket {
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 48, 135, 0.25), 0 1px 4px rgba(0,0,0,0.15);
+  font-family: 'Noto Sans SC', sans-serif;
+  user-select: none;
+}
+
+/* ── 顶部横幅 ── */
+.header {
+  background: #003087;
+  padding: 9px 14px 8px;
+  text-align: center;
+  letter-spacing: 0.18em;
+}
+
+.headerText {
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* ── 品牌区 ── */
+.brand {
+  background: #fff;
+  padding: 10px 14px 9px;
+  text-align: center;
+  border-bottom: 1px solid #e8eef8;
+}
+
+.parkEn {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: #8898b0;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.parkCn {
+  font-family: 'LXGW WenKai', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #c9982a;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.areaLabel {
+  margin-top: 3px;
+  font-size: 0.6rem;
+  color: #7a8fad;
+  letter-spacing: 0.08em;
+}
+
+/* ── 大图区（真实照片） ── */
+.photoArea {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── CSS 城堡场景 ── */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #040c26 0%,
+    #0a1a52 38%,
+    #141e6e 65%,
+    #1e1060 100%
+  );
+}
+
+/* 月亮 */
+.moon {
+  position: absolute;
+  top: 12px;
+  right: 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #fffde7, #fff8c8 60%, #ffe57f);
+  box-shadow: 0 0 12px 4px rgba(255, 245, 120, 0.35);
+}
+
+/* 星星 */
+.star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  animation: twinkle calc(1.4s + var(--i) * 0.28s) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1;   transform: scale(1.4); }
+}
+
+/* 烟花 */
+.firework {
+  position: absolute;
+  border-radius: 50%;
+  animation: fireworkPulse 2.6s ease-in-out infinite;
+}
+
+.fw1 {
+  width: 36px;
+  height: 36px;
+  top: 14px;
+  left: 18%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 79, 0.9)  0%,
+    rgba(255, 183, 30, 0.6)  30%,
+    rgba(255, 100, 50, 0.3)  60%,
+    transparent 75%
+  );
+  animation-delay: 0s;
+}
+
+.fw2 {
+  width: 28px;
+  height: 28px;
+  top: 22px;
+  left: 62%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 130, 255, 0.9) 0%,
+    rgba(150, 80, 240, 0.6)  30%,
+    rgba(80, 20, 180, 0.2)   60%,
+    transparent 75%
+  );
+  animation-delay: 0.9s;
+}
+
+.fw3 {
+  width: 22px;
+  height: 22px;
+  top: 38px;
+  left: 44%;
+  background: radial-gradient(
+    circle,
+    rgba(120, 230, 255, 0.9) 0%,
+    rgba(50, 180, 255, 0.5)  35%,
+    rgba(10, 80, 200, 0.2)   65%,
+    transparent 80%
+  );
+  animation-delay: 1.6s;
+}
+
+@keyframes fireworkPulse {
+  0%   { transform: scale(0.4); opacity: 0; }
+  20%  { transform: scale(1.2); opacity: 1; }
+  55%  { transform: scale(1);   opacity: 0.7; }
+  80%  { transform: scale(1.5); opacity: 0.2; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── 城堡组合 ── */
+.castleWrap {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+/* 极小远景塔 */
+.tinyTower {
+  position: relative;
+  width: 14px;
+  height: 36px;
+  background: linear-gradient(180deg, #7b8fc8, #b0bed8);
+  border-radius: 1px 1px 0 0;
+}
+
+.tinyL2 { margin-right: 2px; }
+.tinyR2 { margin-left: 2px; }
+
+.tinySpire {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 22px solid #9db0d8;
+}
+
+.tinySpire2 {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 16px solid #b8c8e4;
+}
+
+/* 侧翼塔 */
+.wingTower {
+  position: relative;
+  width: 30px;
+  height: 58px;
+  background: linear-gradient(180deg, #8fa8d4 0%, #c4d0e8 100%);
+  border-radius: 2px 2px 0 0;
+}
+
+.wingL { margin-right: 1px; }
+.wingR { margin-left: 1px; }
+
+.wingWindow {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 10px;
+  background: #fff8c0;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 4px rgba(255, 240, 100, 0.6);
+}
+
+.wingSpire {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 40px solid #a8bedc;
+}
+
+/* 主塔 */
+.mainTower {
+  position: relative;
+  width: 70px;
+  height: 88px;
+  background: linear-gradient(180deg, #a8bede 0%, #d0dcf0 50%, #c8d4ec 100%);
+  border-radius: 2px 2px 0 0;
+  z-index: 2;
+}
+
+/* 主塔窗口排 */
+.mainWindows {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.mainWin {
+  width: 8px;
+  height: 11px;
+  background: rgba(255, 245, 150, 0.85);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 5px rgba(255, 230, 80, 0.7);
+}
+
+.mainWinCenter {
+  width: 10px;
+  height: 13px;
+  background: rgba(255, 250, 180, 0.95);
+  box-shadow: 0 0 8px rgba(255, 240, 100, 0.9);
+}
+
+/* 玫瑰窗（圆形装饰） */
+.roseWindow {
+  position: absolute;
+  top: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 245, 160, 0.7);
+  border: 2px solid rgba(200, 215, 240, 0.8);
+  box-shadow: 0 0 6px rgba(255, 230, 80, 0.5);
+}
+
+/* 拱门排 */
+.archRow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.arch {
+  width: 12px;
+  height: 14px;
+  background: #0e1a4a;
+  border-radius: 6px 6px 0 0;
+}
+
+.archCenter {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px 9px 0 0;
+}
+
+/* 主塔塔尖群 */
+.spireGroup {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.mainSpire {
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 60px solid #b8ccee;
+  position: relative;
+  z-index: 3;
+}
+
+.mainSpire::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -6px;
+  width: 12px;
+  height: 60px;
+  background: linear-gradient(180deg, #d8e4f8 0%, #b0c4e4 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.subSpire {
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 38px solid #c4d4ea;
+}
+
+.subSpireL { margin-right: 1px; }
+.subSpireR { margin-left: 1px; }
+
+/* 地面 */
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #162a16 0%, #0d1f0d 100%);
+}
+
+/* 水面倒影 */
+.water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: linear-gradient(180deg, rgba(20, 40, 120, 0.55), rgba(10, 25, 80, 0.8));
+  overflow: hidden;
+}
+
+.waterReflect {
+  position: absolute;
+  top: 2px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: rgba(200, 220, 255, 0.25);
+  border-radius: 50%;
+  animation: waterShimmer 3s ease-in-out infinite alternate;
+}
+
+@keyframes waterShimmer {
+  0%   { opacity: 0.2; transform: scaleX(0.8); }
+  100% { opacity: 0.6; transform: scaleX(1.1); }
+}
+
+/* ── 虚线分割 ── */
+.divider {
+  margin: 0 12px;
+  border-top: 1.5px dashed #c8d4ea;
+}
+
+/* ── 底部信息区 ── */
+.info {
+  background: #f5f8ff;
+  padding: 8px 14px 10px;
+}
+
+.infoTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.typeLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #003087;
+  letter-spacing: 0.04em;
+}
+
+.categoryBadge {
+  font-size: 0.62rem;
+  background: #003087;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-weight: 600;
+}
+
+.price {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #003087;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dateRow {
+  font-size: 0.68rem;
+  color: #5a6a8a;
+  margin-bottom: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.ticketNo {
+  font-size: 0.6rem;
+  color: #8898b8;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
