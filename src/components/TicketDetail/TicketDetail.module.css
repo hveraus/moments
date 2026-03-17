@@ -20,7 +20,7 @@
 .modal {
   position: relative;
   /* 浅色再生纸底色 */
-  background-color: #f5f0e6;
+  background-color: #faf7f2;
   /* 格子纹 + 轻微纸纤维质感 */
   background-image:
     repeating-linear-gradient(
@@ -87,6 +87,12 @@
   justify-content: center;
   margin-bottom: 24px;
   position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.ticketWrap:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
 }
 
 /* 左上角胶带 */
@@ -109,7 +115,6 @@
     rgba(200, 170, 80, 0.12) 4px
   );
   z-index: 2;
-  transition: transform 0.25s ease, opacity 0.25s ease;
   transform-origin: center center;
 }
 
@@ -127,16 +132,6 @@
   transform: rotate(32deg);
 }
 
-/* hover 时胶带轻微翘起 */
-.ticketWrap:hover::before {
-  transform: rotate(-28deg) translateY(-3px) scale(1.06);
-  opacity: 0.75;
-}
-
-.ticketWrap:hover::after {
-  transform: rotate(28deg) translateY(-3px) scale(1.06);
-  opacity: 0.75;
-}
 
 .title {
   font-family: 'LXGW WenKai', serif;
