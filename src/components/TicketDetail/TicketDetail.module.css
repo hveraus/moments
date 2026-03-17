@@ -95,9 +95,12 @@
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
 }
 
-/* 胶带条（由 JS 动态生成，随 ticket ID 变换组合） */
-.tape {
+/* 胶带：左上角和右上角固定位置 */
+.ticketWrap::before,
+.ticketWrap::after {
+  content: '';
   position: absolute;
+  width: 62px;
   height: 22px;
   background-color: rgba(255, 242, 180, 0.58);
   background-image: repeating-linear-gradient(
@@ -110,9 +113,20 @@
   border: 1px solid rgba(210, 185, 100, 0.38);
   border-radius: 2px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 3px rgba(0, 0, 0, 0.09);
-  transform-origin: center center;
   z-index: 2;
-  pointer-events: none;
+  transform-origin: center center;
+}
+
+.ticketWrap::before {
+  top: -10px;
+  left: 18%;
+  transform: rotate(-34deg);
+}
+
+.ticketWrap::after {
+  top: -10px;
+  right: 18%;
+  transform: rotate(34deg);
 }
 
 
