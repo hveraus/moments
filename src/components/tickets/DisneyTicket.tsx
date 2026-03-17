@@ -1,8 +1,16 @@
 import styles from './DisneyTicket.module.css';
 import type { TicketComponentProps } from '../../utils/ticketRegistry';
+import disney10thImg from '../../assets/disney-10th.png';
+
+/* imageUrl 字段映射：支持 Vite 打包的本地资源 */
+const imageMap: Record<string, string> = {
+  '/disney-10th.jpg': disney10thImg,
+  '/disney-10th.png': disney10thImg,
+};
 
 export function DisneyTicket({ data }: TicketComponentProps) {
-  const hasImage = Boolean(data.imageUrl);
+  const resolvedImage = data.imageUrl ? (imageMap[data.imageUrl] ?? data.imageUrl) : undefined;
+  const hasImage = Boolean(resolvedImage);
 
   return (
     <div className={styles.ticket}>
@@ -25,7 +33,7 @@ export function DisneyTicket({ data }: TicketComponentProps) {
       {/* 主图区：真实照片 or CSS 城堡场景 */}
       {hasImage ? (
         <div className={styles.photoArea}>
-          <img src={data.imageUrl} alt={data.parkName} className={styles.photo} />
+          <img src={resolvedImage} alt={data.parkName} className={styles.photo} />
         </div>
       ) : (
         <div className={styles.scene}>

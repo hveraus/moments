@@ -1,7 +1,7 @@
 .card {
   width: 340px;
   background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #43a047 100%);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 24px;
   color: #fff;
   font-family: 'Noto Sans SC', sans-serif;

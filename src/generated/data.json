@@ -16,6 +16,30 @@
       "endDate": "2026-02-24T00:00:00.000Z",
       "tickets": [
         {
+          "id": "sg-flight",
+          "template": "boarding-pass",
+          "title": "厦门航空 杭州→新加坡",
+          "description": "清晨从萧山机场出发，乘坐厦门航空直飞新加坡，望着舷窗外云层渐渐散开，赤道的阳光照进机舱，旅行正式开始。",
+          "photos": [],
+          "data": {
+            "passengerName": "KEN",
+            "from": "HGH",
+            "fromCity": "杭州",
+            "to": "SIN",
+            "toCity": "新加坡",
+            "flight": "MF 8151",
+            "date": "20 FEB 2026",
+            "gate": "B12",
+            "seat": "32A",
+            "class": "Y",
+            "classLabel": "经济舱",
+            "boardingTime": "08:05",
+            "departTime": "09:05",
+            "sequenceNo": "087",
+            "bookingRef": "MF8151K"
+          }
+        },
+        {
           "id": "sg-zoo",
           "template": "museum-ticket",
           "title": "新加坡动物园",
@@ -96,6 +120,32 @@
       "endDate": "2026-02-16T00:00:00.000Z",
       "tickets": [
         {
+          "id": "disney-crh",
+          "template": "crh-ticket",
+          "title": "高铁 杭州东→上海虹桥",
+          "description": "大清早拉着行李箱赶到杭州东站，G7502 次高铁只要48分钟就到了上海虹桥，出站直奔迪士尼，一路都是带着米奇耳朵的人。",
+          "photos": [],
+          "data": {
+            "ticketNo": "K8820347",
+            "gate": "D05",
+            "from": "杭州东",
+            "fromEn": "Hangzhou East",
+            "trainNo": "G 7502",
+            "to": "上海虹桥",
+            "toEn": "Shanghai Hongqiao",
+            "date": "2026-02-14",
+            "time": "07:00",
+            "car": "03",
+            "seat": "12C",
+            "price": "73.00",
+            "channel": "网",
+            "seatType": "二等座",
+            "idNo": "330102************",
+            "name": "Ken",
+            "barcode": "10032026021400430102G750203160001"
+          }
+        },
+        {
           "id": "disney-entry",
           "template": "disney-ticket",
           "title": "上海迪士尼入园票",
@@ -111,6 +161,7 @@
             "parkNameEn": "SHANGHAI DISNEYLAND",
             "area": "梦幻世界",
             "areaEn": "FANTASYLAND",
+            "imageUrl": "/disney-10th.jpg",
             "type": "一日票",
             "category": "儿童",
             "price": "¥399",

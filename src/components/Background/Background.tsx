@@ -128,6 +128,7 @@ function DayOcean() {
         <div className={`${styles.waterSparkle} ${styles.ws8}`} />
       </div>
 
+
       {/* Ocean waves — daytime */}
       <svg className={`${styles.oceanWave} ${styles.waveDay1}`} viewBox="0 0 1440 200" preserveAspectRatio="none">
         <path d="M0 200 L0 100 Q80 60 180 90 Q280 40 380 80 Q480 30 580 70 Q680 20 780 65 Q880 35 980 75 Q1080 45 1180 80 Q1280 55 1380 85 Q1420 75 1440 80 L1440 200 Z" />

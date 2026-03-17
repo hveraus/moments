@@ -129,6 +129,7 @@ const TEMPLATES: TemplateEntry[] = [
       parkNameEn: 'SHANGHAI DISNEYLAND',
       area: '梦幻世界',
       areaEn: 'FANTASYLAND',
+      imageUrl: '/disney-10th.jpg',
       type: '一日票',
       category: '儿童',
       price: '¥399',

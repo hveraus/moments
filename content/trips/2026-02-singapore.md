@@ -4,6 +4,27 @@ country: 新加坡
 startDate: 2026-02-20
 endDate: 2026-02-24
 tickets:
+  - id: sg-flight
+    template: boarding-pass
+    title: 厦门航空 杭州→新加坡
+    description: "清晨从萧山机场出发，乘坐厦门航空直飞新加坡，望着舷窗外云层渐渐散开，赤道的阳光照进机舱，旅行正式开始。"
+    photos: []
+    data:
+      passengerName: "KEN"
+      from: "HGH"
+      fromCity: "杭州"
+      to: "SIN"
+      toCity: "新加坡"
+      flight: "MF 8151"
+      date: "20 FEB 2026"
+      gate: "B12"
+      seat: "32A"
+      class: "Y"
+      classLabel: "经济舱"
+      boardingTime: "08:05"
+      departTime: "09:05"
+      sequenceNo: "087"
+      bookingRef: "MF8151K"
   - id: sg-zoo
     template: museum-ticket
     title: 新加坡动物园

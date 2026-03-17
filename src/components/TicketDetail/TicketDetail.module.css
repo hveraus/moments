@@ -9,6 +9,7 @@
   padding: 60px 24px;
   overflow-y: auto;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   animation: fadeIn 0.2s ease;
 }
 
@@ -87,12 +88,11 @@
   justify-content: center;
   margin-bottom: 24px;
   position: relative;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .ticketWrap:hover {
   transform: translateY(-4px) scale(1.02);
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
 }
 
 /* 胶带：左上角和右上角固定位置 */

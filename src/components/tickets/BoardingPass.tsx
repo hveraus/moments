@@ -1,32 +1,6 @@
 import styles from './BoardingPass.module.css';
 import type { TicketComponentProps } from '../../utils/ticketRegistry';
 
-/** 厦门航空白鹭 logo SVG（白色，用于深色背景） */
-function EgretLogo() {
-  return (
-    <svg viewBox="0 0 76 38" width="76" height="38" className={styles.egretSvg}>
-      {/* 左翼（后翼）上表面 */}
-      <path d="M 30,17 C 22,11 12,6 2,5 C 11,8 21,12 28,17 Z" fill="white"/>
-      {/* 左翼下表面 */}
-      <path d="M 30,19 C 21,19 11,22 4,28 C 12,23 22,21 29,20 Z" fill="white"/>
-      {/* 机身 */}
-      <path d="M 27,15 C 33,10 41,9 46,12 C 49,14 49,19 45,21 C 39,23 31,22 28,18 Z" fill="white"/>
-      {/* 尾羽 */}
-      <path d="M 29,19 C 21,20 13,22 5,27 C 13,23 22,21 29,20 Z" fill="white" opacity="0.85"/>
-      {/* 右翼（前翼）上表面 */}
-      <path d="M 44,12 C 51,7 58,4 66,3 C 59,6 52,9 45,13 Z" fill="white"/>
-      {/* 右翼下表面 */}
-      <path d="M 44,13 C 53,12 61,11 68,15 C 60,13 52,13 45,14 Z" fill="white"/>
-      {/* 颈部 */}
-      <path d="M 45,11 C 52,7 59,4 65,4 C 59,7 53,10 46,12 Z" fill="white"/>
-      {/* 头部 */}
-      <ellipse cx="67" cy="4" rx="4.5" ry="3" transform="rotate(-12,67,4)" fill="white"/>
-      {/* 喙 */}
-      <path d="M 70,3.5 L 77,1.5 L 77,4 L 70,5 Z" fill="white"/>
-    </svg>
-  );
-}
-
 /** "蓝色旋律" 四条波浪曲线装饰 */
 function BlueWaves() {
   return (
@@ -72,13 +46,7 @@ export function BoardingPass({ data }: TicketComponentProps) {
 
         {/* 顶部深蓝 header */}
         <div className={styles.header}>
-          <div className={styles.logoGroup}>
-            <EgretLogo />
-            <div className={styles.airlineName}>
-              <div className={styles.airlineCn}>厦门航空</div>
-              <div className={styles.airlineEn}>XIAMENAIR</div>
-            </div>
-          </div>
+          <img src="/moments/xiamenair-logo.svg" className={styles.logoImg} alt="厦门航空 XIAMENAIR" />
           <div className={styles.boardingPassLabel}>
             <div className={styles.bpEn}>BOARDING PASS</div>
             <div className={styles.bpCn}>登机牌</div>
@@ -145,15 +113,12 @@ export function BoardingPass({ data }: TicketComponentProps) {
       </div>
 
       {/* ═══ 虚线分隔 ═══ */}
-      <div className={styles.separator}>
-        <div className={styles.circleTop} />
-        <div className={styles.circleBottom} />
-      </div>
+      <div className={styles.separator} />
 
       {/* ═══ 副联（右侧 tear-off） ═══ */}
       <div className={styles.stub}>
         <div className={styles.stubHeader}>
-          <EgretLogo />
+          <img src="/moments/xiamenair-logo.svg" className={styles.logoImgStub} alt="厦门航空 XIAMENAIR" />
         </div>
         <div className={styles.stubBody}>
           <div className={styles.stubFlight}>{data.flight}</div>
@@ -171,10 +136,6 @@ export function BoardingPass({ data }: TicketComponentProps) {
           <div className={styles.stubField}>
             <div className={styles.label}>登机时间</div>
             <div className={styles.stubTime}>{data.boardingTime}</div>
-          </div>
-          <div className={styles.stubField}>
-            <div className={styles.label}>序号 SEQ</div>
-            <div className={styles.stubSeq}>{data.sequenceNo}</div>
           </div>
         </div>
       </div>

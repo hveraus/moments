@@ -80,15 +80,26 @@
   content: '📷 ';
 }
 
-/* Responsive: scale down tickets on small screens */
-@media (max-width: 520px) {
+/* Responsive: scale down tickets on small screens.
+   Use `scale` property (not `transform`) so it composes with
+   the inline rotate() on transform — tickets keep their tilt angle. */
+@media (max-width: 640px) {
   .tiltWrap {
-    transform: scale(0.85) !important;
+    scale: 0.78;
+  }
+  .tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .tiltWrap {
+    scale: 0.68;
   }
 }
 
 @media (max-width: 380px) {
   .tiltWrap {
-    transform: scale(0.72) !important;
+    scale: 0.62;
   }
 }

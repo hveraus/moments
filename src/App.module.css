@@ -25,3 +25,9 @@
   max-width: 800px;
   padding: 0 24px;
 }
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 12px;
+  }
+}

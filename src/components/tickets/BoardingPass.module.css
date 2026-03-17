@@ -3,13 +3,25 @@
   display: flex;
   width: 500px;
   height: 205px;
-  border-radius: 8px;
-  overflow: visible; /* 让分隔圆半圆溢出 */
-  box-shadow: 0 5px 22px rgba(0, 30, 80, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  /* filter drop-shadow follows the mask-clipped shape */
+  filter: drop-shadow(0 5px 22px rgba(0, 30, 80, 0.25));
   background: #fff;
   font-family: 'Noto Sans SC', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   position: relative;
+  /* Punch transparent semicircle notches at the separator */
+  mask:
+    radial-gradient(circle 7px at 351.5px 0px,  transparent 7px, black 7px),
+    radial-gradient(circle 7px at 351.5px 205px, transparent 7px, black 7px);
+  mask-size: 100% 100%;
+  mask-composite: intersect;
+  -webkit-mask:
+    radial-gradient(circle 7px at 351.5px 0px,  transparent 7px, black 7px),
+    radial-gradient(circle 7px at 351.5px 205px, transparent 7px, black 7px);
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-composite: source-in;
 }
 
 /* ── 主联 ── */
@@ -18,7 +30,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  border-radius: 8px 0 0 8px;
+  border-radius: 4px 0 0 4px;
   overflow: hidden;
   background: #fff;
 }
@@ -26,42 +38,26 @@
 /* ── Header 深蓝条 ── */
 .header {
   background: #1a3d82;
-  padding: 9px 14px;
+  padding: 6px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
 }
 
-.logoGroup {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.egretSvg {
+/* 主联 header logo */
+.logoImg {
   display: block;
+  height: 28px;
+  width: auto;
   flex-shrink: 0;
 }
 
-.airlineName {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.airlineCn {
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.08em;
-}
-
-.airlineEn {
-  font-size: 9.5px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.12em;
+/* 副联 stub header logo（稍小） */
+.logoImgStub {
+  display: block;
+  height: 22px;
+  width: auto;
 }
 
 .boardingPassLabel {
@@ -69,14 +65,14 @@
 }
 
 .bpEn {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.12em;
 }
 
 .bpCn {
-  font-size: 9px;
+  font-size: 8px;
   color: rgba(255,255,255,0.7);
   letter-spacing: 0.15em;
   margin-top: 1px;
@@ -85,7 +81,7 @@
 /* ── 蓝色旋律波浪条 ── */
 .waves {
   width: 100%;
-  height: 14px;
+  height: 10px;
   display: block;
   flex-shrink: 0;
 }
@@ -93,14 +89,14 @@
 /* ── 主联内容区 ── */
 .body {
   flex: 1;
-  padding: 7px 14px 5px;
+  padding: 5px 28px 3px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
 }
 
 .label {
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -110,11 +106,11 @@
 .fieldGroup {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0px;
 }
 
 .passengerName {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #0a1a3a;
   letter-spacing: 0.04em;
@@ -130,7 +126,7 @@
 .cityBlock {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0px;
 }
 
 .cityRight {
@@ -138,7 +134,7 @@
 }
 
 .iata {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 900;
   color: #1a3d82;
   line-height: 1;
@@ -146,7 +142,7 @@
 }
 
 .cityName {
-  font-size: 10px;
+  font-size: 9px;
   color: #555;
 }
 
@@ -155,11 +151,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
 }
 
 .flightLabel {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: #1a3d82;
   letter-spacing: 0.06em;
@@ -167,7 +163,7 @@
 
 .arrowSvg {
   width: 80px;
-  height: 12px;
+  height: 10px;
   display: block;
 }
 
@@ -175,38 +171,38 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  gap: 2px;
 }
 
 .gridCell {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0px;
 }
 
 .value {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
   color: #0a1a3a;
 }
 
 /* ── 条形码 ── */
 .barcodeRow {
-  padding: 4px 14px 6px;
+  padding: 2px 28px 4px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   flex-shrink: 0;
 }
 
 .barcode {
   width: 100%;
-  height: 36px;
+  height: 26px;
   display: block;
 }
 
 .barcodeText {
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0.2em;
   color: #888;
   font-family: 'JetBrains Mono', monospace;
@@ -227,20 +223,7 @@
   flex-shrink: 0;
 }
 
-.circleTop,
-.circleBottom {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #f0ece4; /* modal 背景色 */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.circleTop  { top: -7px; }
-.circleBottom { bottom: -7px; }
+/* Notches are now handled by mask on .pass — no circle divs needed */
 
 /* ── 副联（右侧撕开存根） ── */
 .stub {
@@ -248,14 +231,14 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 4px 4px 0;
   overflow: hidden;
   background: #fff;
 }
 
 .stubHeader {
   background: #1a3d82;
-  padding: 9px 10px 8px;
+  padding: 6px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,64 +246,64 @@
 
 .stubBody {
   flex: 1;
-  padding: 8px 12px;
+  padding: 6px 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .stubFlight {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   color: #1a3d82;
   letter-spacing: 0.06em;
 }
 
 .stubRoute {
-  font-size: 10px;
+  font-size: 9px;
   color: #444;
   font-weight: 500;
 }
 
 .stubDate {
-  font-size: 10px;
+  font-size: 9px;
   color: #666;
 }
 
 .stubDivider {
   height: 1px;
   background: #e0e0e0;
-  margin: 2px 0;
+  margin: 1px 0;
 }
 
 .stubField {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0px;
 }
 
 .stubSeat {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
   color: #1a3d82;
   line-height: 1;
 }
 
 .stubGate {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   color: #1a3d82;
   line-height: 1;
 }
 
 .stubTime {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: #0a1a3a;
 }
 
 .stubSeq {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   color: #444;
 }

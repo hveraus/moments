@@ -22,7 +22,7 @@ function QRPlaceholder() {
 
   return (
     <svg
-      width="68" height="68"
+      width="51" height="51"
       viewBox="0 0 18 18"
       xmlns="http://www.w3.org/2000/svg"
       className={styles.qr}
