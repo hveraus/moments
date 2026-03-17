@@ -81,7 +81,7 @@
   background: rgba(120, 90, 50, 0.2);
 }
 
-/* 票根外层容器：用 ::before / ::after 贴透明胶带 */
+/* 票根外层容器 */
 .ticketWrap {
   display: flex;
   justify-content: center;
@@ -95,41 +95,24 @@
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
 }
 
-/* 左上角胶带 */
-.ticketWrap::before,
-.ticketWrap::after {
-  content: '';
+/* 胶带条（由 JS 动态生成，随 ticket ID 变换组合） */
+.tape {
   position: absolute;
-  width: 64px;
   height: 22px;
-  background: rgba(255, 240, 180, 0.55);
-  border: 1px solid rgba(210, 185, 110, 0.4);
-  border-radius: 2px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 3px rgba(0,0,0,0.1);
-  /* 内部横纹模拟胶带质感 */
+  background-color: rgba(255, 242, 180, 0.58);
   background-image: repeating-linear-gradient(
     90deg,
     transparent,
     transparent 3px,
-    rgba(200, 170, 80, 0.12) 3px,
-    rgba(200, 170, 80, 0.12) 4px
+    rgba(200, 170, 70, 0.13) 3px,
+    rgba(200, 170, 70, 0.13) 4px
   );
-  z-index: 2;
+  border: 1px solid rgba(210, 185, 100, 0.38);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 3px rgba(0, 0, 0, 0.09);
   transform-origin: center center;
-}
-
-.ticketWrap::before {
-  top: -8px;
-  left: 50%;
-  margin-left: -140px;
-  transform: rotate(-32deg);
-}
-
-.ticketWrap::after {
-  top: -8px;
-  right: 50%;
-  margin-right: -140px;
-  transform: rotate(32deg);
+  z-index: 2;
+  pointer-events: none;
 }
 
 
