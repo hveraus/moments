@@ -7,6 +7,7 @@ import { RopewayTicket } from './components/tickets/RopewayTicket';
 import { BoatTicket } from './components/tickets/BoatTicket';
 import { TransitCard } from './components/tickets/TransitCard';
 import { DisneyTicket } from './components/tickets/DisneyTicket';
+import { CRHTicket } from './components/tickets/CRHTicket';
 
 type TemplateEntry = {
   id: string;
@@ -132,6 +133,31 @@ const TEMPLATES: TemplateEntry[] = [
       price: '¥399',
       date: '2026-02-14',
       ticketNo: 'No. SDL-20260214-08832',
+    },
+  },
+  {
+    id: 'crh-ticket',
+    label: '高铁纸质票',
+    desc: '仿真中国铁路磁卡车票，含速度线背景、二维码、底部蓝条',
+    component: CRHTicket,
+    data: {
+      ticketNo: '192J093984',
+      gate: 'A27',
+      from: '郑州东',
+      fromEn: 'Zhengzhoudong',
+      trainNo: 'G1925',
+      to: '西安北',
+      toEn: "Xi`anbei",
+      date: '2017年06月06日',
+      time: '16:46',
+      car: '03',
+      seat: '04D',
+      price: '¥239.0',
+      channel: '网',
+      seatType: '二等座',
+      idNo: '14041111985****0854',
+      name: '李小二',
+      barcode: '65773311920607J093984',
     },
   },
   {
