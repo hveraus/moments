@@ -19,23 +19,33 @@
 
 .modal {
   position: relative;
-  /* 粗纹理再生纸底色：温暖米棕 */
-  background-color: #e8dcc6;
-  /* SVG feTurbulence 模拟粗纸纤维纹理 */
+  /* 浅色再生纸底色 */
+  background-color: #f5f0e6;
+  /* 格子纹 + 轻微纸纤维质感 */
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23paper)' opacity='0.28'/%3E%3C/svg%3E"),
-    /* 额外一层低频大纹理，模拟纸张不均匀 */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='coarse'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.18' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23coarse)' opacity='0.12'/%3E%3C/svg%3E");
-  background-repeat: repeat, repeat;
-  background-size: 400px 400px, 600px 600px;
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(180, 160, 120, 0.18) 27px,
+      rgba(180, 160, 120, 0.18) 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 27px,
+      rgba(180, 160, 120, 0.12) 27px,
+      rgba(180, 160, 120, 0.12) 28px
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23paper)' opacity='0.15'/%3E%3C/svg%3E");
+  background-size: 28px 28px, 28px 28px, 300px 300px;
   border-radius: 16px;
   padding: 40px;
   max-width: 640px;
   width: 100%;
   animation: slideUp 0.3s ease;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  /* 轻微边缘不均匀感 */
-  border: 1px solid rgba(160, 130, 80, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(160, 130, 80, 0.2);
 }
 
 @keyframes slideUp {
@@ -71,10 +81,61 @@
   background: rgba(120, 90, 50, 0.2);
 }
 
+/* 票根外层容器：用 ::before / ::after 贴透明胶带 */
 .ticketWrap {
   display: flex;
   justify-content: center;
   margin-bottom: 24px;
+  position: relative;
+}
+
+/* 左上角胶带 */
+.ticketWrap::before,
+.ticketWrap::after {
+  content: '';
+  position: absolute;
+  width: 64px;
+  height: 22px;
+  background: rgba(255, 240, 180, 0.55);
+  border: 1px solid rgba(210, 185, 110, 0.4);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 3px rgba(0,0,0,0.1);
+  /* 内部横纹模拟胶带质感 */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 3px,
+    rgba(200, 170, 80, 0.12) 3px,
+    rgba(200, 170, 80, 0.12) 4px
+  );
+  z-index: 2;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center center;
+}
+
+.ticketWrap::before {
+  top: -8px;
+  left: 50%;
+  margin-left: -140px;
+  transform: rotate(-32deg);
+}
+
+.ticketWrap::after {
+  top: -8px;
+  right: 50%;
+  margin-right: -140px;
+  transform: rotate(32deg);
+}
+
+/* hover 时胶带轻微翘起 */
+.ticketWrap:hover::before {
+  transform: rotate(-28deg) translateY(-3px) scale(1.06);
+  opacity: 0.75;
+}
+
+.ticketWrap:hover::after {
+  transform: rotate(28deg) translateY(-3px) scale(1.06);
+  opacity: 0.75;
 }
 
 .title {
@@ -122,10 +183,11 @@
   background: #fff;
   padding: 8px 8px 28px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: 0;
   object-fit: cover;
   aspect-ratio: auto;
-  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* 通过 nth-child 给每张照片不同的微旋转，营造随手摆放感 */
@@ -134,10 +196,64 @@
 .photoGrid .photo:nth-child(3n)   { transform: rotate(-1.2deg); }
 
 .photoGrid .photo:hover {
-  transform: rotate(0deg) scale(1.05);
+  transform: rotate(0deg) scale(1.08);
   z-index: 2;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* 照片放大灯箱 */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+  cursor: zoom-out;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightboxClose {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 @media (max-width: 520px) {
