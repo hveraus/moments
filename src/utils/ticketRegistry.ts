@@ -8,6 +8,7 @@ import { BoatTicket } from '../components/tickets/BoatTicket';
 import { TransitCard } from '../components/tickets/TransitCard';
 import { DisneyTicket } from '../components/tickets/DisneyTicket';
 import { CRHTicket } from '../components/tickets/CRHTicket';
+import { BoardingPass } from '../components/tickets/BoardingPass';
 import { FallbackTicket } from '../components/tickets/FallbackTicket';
 
 export interface TicketComponentProps {
@@ -24,6 +25,7 @@ const registry: Record<string, ComponentType<TicketComponentProps>> = {
   'transit-card': TransitCard,
   'disney-ticket': DisneyTicket,
   'crh-ticket': CRHTicket,
+  'boarding-pass': BoardingPass,
 };
 
 export function getTicketComponent(

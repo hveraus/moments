@@ -1,0 +1,326 @@
+/* ── 整体：横向登机牌 500×205px ── */
+.pass {
+  display: flex;
+  width: 500px;
+  height: 205px;
+  border-radius: 8px;
+  overflow: visible; /* 让分隔圆半圆溢出 */
+  box-shadow: 0 5px 22px rgba(0, 30, 80, 0.25);
+  background: #fff;
+  font-family: 'Noto Sans SC', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* ── 主联 ── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ── Header 深蓝条 ── */
+.header {
+  background: #1a3d82;
+  padding: 9px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.egretSvg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.airlineName {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.airlineCn {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+.airlineEn {
+  font-size: 9.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.12em;
+}
+
+.boardingPassLabel {
+  text-align: right;
+}
+
+.bpEn {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.12em;
+}
+
+.bpCn {
+  font-size: 9px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.15em;
+  margin-top: 1px;
+}
+
+/* ── 蓝色旋律波浪条 ── */
+.waves {
+  width: 100%;
+  height: 14px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── 主联内容区 ── */
+.body {
+  flex: 1;
+  padding: 7px 14px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.passengerName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0a1a3a;
+  letter-spacing: 0.04em;
+}
+
+/* ── 航线 ── */
+.routeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cityBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.cityRight {
+  text-align: right;
+}
+
+.iata {
+  font-size: 30px;
+  font-weight: 900;
+  color: #1a3d82;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.cityName {
+  font-size: 10px;
+  color: #555;
+}
+
+.routeCenter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.flightLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a3d82;
+  letter-spacing: 0.06em;
+}
+
+.arrowSvg {
+  width: 80px;
+  height: 12px;
+  display: block;
+}
+
+/* ── 详情网格 ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.gridCell {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.value {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #0a1a3a;
+}
+
+/* ── 条形码 ── */
+.barcodeRow {
+  padding: 4px 14px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.barcode {
+  width: 100%;
+  height: 36px;
+  display: block;
+}
+
+.barcodeText {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #888;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+}
+
+/* ── 虚线分隔（带半圆缺口） ── */
+.separator {
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #ccc 0px,
+    #ccc 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  position: relative;
+  flex-shrink: 0;
+}
+
+.circleTop,
+.circleBottom {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f0ece4; /* modal 背景色 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.circleTop  { top: -7px; }
+.circleBottom { bottom: -7px; }
+
+/* ── 副联（右侧撕开存根） ── */
+.stub {
+  width: 148px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.stubHeader {
+  background: #1a3d82;
+  padding: 9px 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stubBody {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stubFlight {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a3d82;
+  letter-spacing: 0.06em;
+}
+
+.stubRoute {
+  font-size: 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+.stubDate {
+  font-size: 10px;
+  color: #666;
+}
+
+.stubDivider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 2px 0;
+}
+
+.stubField {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.stubSeat {
+  font-size: 22px;
+  font-weight: 900;
+  color: #1a3d82;
+  line-height: 1;
+}
+
+.stubGate {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a3d82;
+  line-height: 1;
+}
+
+.stubTime {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a1a3a;
+}
+
+.stubSeq {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}

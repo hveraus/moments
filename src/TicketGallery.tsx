@@ -8,6 +8,7 @@ import { BoatTicket } from './components/tickets/BoatTicket';
 import { TransitCard } from './components/tickets/TransitCard';
 import { DisneyTicket } from './components/tickets/DisneyTicket';
 import { CRHTicket } from './components/tickets/CRHTicket';
+import { BoardingPass } from './components/tickets/BoardingPass';
 
 type TemplateEntry = {
   id: string;
@@ -133,6 +134,29 @@ const TEMPLATES: TemplateEntry[] = [
       price: '¥399',
       date: '2026-02-14',
       ticketNo: 'No. SDL-20260214-08832',
+    },
+  },
+  {
+    id: 'boarding-pass',
+    label: '厦门航空登机牌',
+    desc: '仿真厦门航空 MF 登机牌，含白鹭 Logo、蓝色旋律波纹、条形码、副联撕票存根',
+    component: BoardingPass,
+    data: {
+      passengerName: 'ZHANG SAN / MR',
+      from: 'HGH',
+      fromCity: '杭州萧山',
+      to: 'SIN',
+      toCity: '新加坡樟宜',
+      flight: 'MF8300',
+      date: '2026-03-20',
+      gate: 'B12',
+      seat: '34A',
+      class: 'Y',
+      classLabel: '经济舱',
+      boardingTime: '09:30',
+      departTime: '10:30',
+      sequenceNo: '088',
+      bookingRef: 'ABCD1234567',
     },
   },
   {
