@@ -13,13 +13,13 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 62%;
   background: linear-gradient(to bottom,
-    rgb(11, 14, 26) 30%,
-    rgba(11, 14, 26, 0.8) 60%,
+    rgb(11, 14, 26) 55%,
+    rgba(11, 14, 26, 0.6) 80%,
     transparent 100%
   );
-  z-index: 150;
+  z-index: 120;
   pointer-events: none;
 }
 

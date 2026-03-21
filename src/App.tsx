@@ -60,7 +60,7 @@ function App() {
       )}
       {viewMode === 'timeline' && <Timeline trips={sortedTrips} />}
       <div className={styles.container}>
-        <div className={styles.inner}>
+        <div className={`${styles.inner} ${viewMode === 'drawer' ? styles.innerDrawer : ''}`}>
           <Header
             site={data.site}
             sortOrder={sortOrder}

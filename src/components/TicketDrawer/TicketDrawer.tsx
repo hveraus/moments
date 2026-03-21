@@ -8,8 +8,8 @@ interface TicketDrawerProps {
   onTicketClick: (ticket: TicketData) => void;
 }
 
-const CARD_SCALE = 0.38;
-const HOVER_LIFT = 60; // px to lift card upward on hover
+const CARD_SCALE = 0.75;
+const HOVER_LIFT = 80; // px to lift card upward on hover
 
 export function TicketDrawer({ trips, onTicketClick }: TicketDrawerProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -55,9 +55,9 @@ export function TicketDrawer({ trips, onTicketClick }: TicketDrawerProps) {
 
   // Layout: vanishing point at top-center, cards fan out toward bottom
   const viewportH = typeof window !== 'undefined' ? window.innerHeight : 800;
-  const vanishY = viewportH * 0.46; // vanishing point Y (far cards converge here)
-  const nearY = viewportH * 0.88; // nearest card Y position
-  const totalDepth = nearY - vanishY; // total Y range
+  const vanishY = viewportH * 0.62; // vanishing point Y (far cards converge here)
+  const nearY = viewportH * 0.92; // nearest card Y position
+  const totalDepth = (nearY - vanishY); // compressed Y range
 
   return (
     <div className={styles.drawer} ref={containerRef}>
