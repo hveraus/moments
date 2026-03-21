@@ -3,6 +3,16 @@ title: 北京
 country: 中国
 startDate: 2025-02-01
 endDate: 2025-02-05
+locations:
+  - name: 天坛
+    lat: 39.8822
+    lng: 116.4066
+  - name: 八达岭长城
+    lat: 40.3541
+    lng: 116.0094
+  - name: 张家口
+    lat: 40.7675
+    lng: 114.8863
 tickets:
   - id: forbidden-city
     template: museum-ticket

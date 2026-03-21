@@ -1,5 +1,6 @@
 import styles from './TripSection.module.css';
 import { TicketSlot } from '../TicketSlot/TicketSlot';
+import { TripMap } from '../TripMap/TripMap';
 import type { Trip, TicketData } from '../../types';
 
 interface TripSectionProps {
@@ -43,6 +44,9 @@ export function TripSection({ trip, onTicketClick }: TripSectionProps) {
             />
           ))}
         </div>
+        {trip.locations && trip.locations.length > 0 && (
+          <TripMap locations={trip.locations} />
+        )}
       </div>
     </div>
   );

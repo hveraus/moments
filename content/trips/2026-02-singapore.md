@@ -3,6 +3,16 @@ title: 新加坡
 country: 新加坡
 startDate: 2026-02-20
 endDate: 2026-02-24
+locations:
+  - name: 新加坡动物园
+    lat: 1.4043
+    lng: 103.7930
+  - name: Singapore Flyer
+    lat: 1.2893
+    lng: 103.8631
+  - name: Clarke Quay
+    lat: 1.2906
+    lng: 103.8465
 tickets:
   - id: sg-flight
     template: boarding-pass

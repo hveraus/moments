@@ -3,6 +3,16 @@ title: 曼谷
 country: 泰国
 startDate: 2024-12-20
 endDate: 2024-12-25
+locations:
+  - name: 大皇宫
+    lat: 13.7500
+    lng: 100.4914
+  - name: Tha Tien 码头
+    lat: 13.7446
+    lng: 100.4905
+  - name: BTS Sathorn
+    lat: 13.7213
+    lng: 100.5271
 tickets:
   - id: grand-palace
     template: museum-ticket
