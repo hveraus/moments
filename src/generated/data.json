@@ -14,6 +14,23 @@
       "country": "新加坡",
       "startDate": "2026-02-20T00:00:00.000Z",
       "endDate": "2026-02-24T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "新加坡动物园",
+          "lat": 1.4043,
+          "lng": 103.793
+        },
+        {
+          "name": "Singapore Flyer",
+          "lat": 1.2893,
+          "lng": 103.8631
+        },
+        {
+          "name": "Clarke Quay",
+          "lat": 1.2906,
+          "lng": 103.8465
+        }
+      ],
       "tickets": [
         {
           "id": "sg-flight",
@@ -118,6 +135,28 @@
       "country": "中国",
       "startDate": "2026-02-14T00:00:00.000Z",
       "endDate": "2026-02-16T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "杭州东站",
+          "lat": 30.2906,
+          "lng": 120.2138
+        },
+        {
+          "name": "上海虹桥站",
+          "lat": 31.195,
+          "lng": 121.3227
+        },
+        {
+          "name": "上海迪士尼",
+          "lat": 31.1434,
+          "lng": 121.658
+        },
+        {
+          "name": "南京东路",
+          "lat": 31.2371,
+          "lng": 121.4753
+        }
+      ],
       "tickets": [
         {
           "id": "disney-crh",
@@ -230,6 +269,23 @@
       "country": "中国",
       "startDate": "2026-01-17T00:00:00.000Z",
       "endDate": "2026-01-19T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "西湖湖滨码头",
+          "lat": 30.251,
+          "lng": 120.1534
+        },
+        {
+          "name": "三潭印月",
+          "lat": 30.238,
+          "lng": 120.146
+        },
+        {
+          "name": "灵隐寺",
+          "lat": 30.2441,
+          "lng": 120.101
+        }
+      ],
       "tickets": [
         {
           "id": "hz-westlake-boat",
@@ -291,6 +347,23 @@
       "country": "日本",
       "startDate": "2025-04-05T00:00:00.000Z",
       "endDate": "2025-04-10T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "嵯峨野",
+          "lat": 35.0186,
+          "lng": 135.672
+        },
+        {
+          "name": "龟冈",
+          "lat": 35.0101,
+          "lng": 135.5761
+        },
+        {
+          "name": "金阁寺",
+          "lat": 35.0394,
+          "lng": 135.7292
+        }
+      ],
       "tickets": [
         {
           "id": "arashiyama-train",
@@ -369,6 +442,23 @@
       "country": "中国",
       "startDate": "2025-02-01T00:00:00.000Z",
       "endDate": "2025-02-05T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "天坛",
+          "lat": 39.8822,
+          "lng": 116.4066
+        },
+        {
+          "name": "八达岭长城",
+          "lat": 40.3541,
+          "lng": 116.0094
+        },
+        {
+          "name": "张家口",
+          "lat": 40.7675,
+          "lng": 114.8863
+        }
+      ],
       "tickets": [
         {
           "id": "forbidden-city",
@@ -449,6 +539,23 @@
       "country": "泰国",
       "startDate": "2024-12-20T00:00:00.000Z",
       "endDate": "2024-12-25T00:00:00.000Z",
+      "locations": [
+        {
+          "name": "大皇宫",
+          "lat": 13.75,
+          "lng": 100.4914
+        },
+        {
+          "name": "Tha Tien 码头",
+          "lat": 13.7446,
+          "lng": 100.4905
+        },
+        {
+          "name": "BTS Sathorn",
+          "lat": 13.7213,
+          "lng": 100.5271
+        }
+      ],
       "tickets": [
         {
           "id": "grand-palace",

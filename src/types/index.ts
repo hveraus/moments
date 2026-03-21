@@ -18,12 +18,19 @@ export interface TicketData {
   data: Record<string, string>;
 }
 
+export interface TripLocation {
+  name: string;
+  lat: number;
+  lng: number;
+}
+
 export interface Trip {
   slug: string;
   title: string;
   country: string;
   startDate: string;
   endDate: string;
+  locations?: TripLocation[];
   tickets: TicketData[];
 }
 

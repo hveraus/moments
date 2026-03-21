@@ -3,6 +3,16 @@ title: 杭州
 country: 中国
 startDate: 2026-01-17
 endDate: 2026-01-19
+locations:
+  - name: 西湖湖滨码头
+    lat: 30.2510
+    lng: 120.1534
+  - name: 三潭印月
+    lat: 30.2380
+    lng: 120.1460
+  - name: 灵隐寺
+    lat: 30.2441
+    lng: 120.1010
 tickets:
   - id: hz-westlake-boat
     template: boat-ticket
