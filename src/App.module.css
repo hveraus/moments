@@ -14,10 +14,15 @@
 
 .container {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  pointer-events: none;
+}
+
+.container > * {
+  pointer-events: auto;
 }
 
 .inner {

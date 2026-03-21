@@ -42,10 +42,42 @@
   color: var(--color-social-hover);
 }
 
-.sortToggle {
+.viewToggle {
   display: flex;
   gap: 0;
   margin-top: 28px;
+  background: var(--color-sort-bg);
+  border-radius: 8px;
+  padding: 3px;
+  transition: background 0.6s ease;
+}
+
+.viewBtn {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 20px;
+  border: none;
+  background: transparent;
+  color: var(--color-sort-text);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.viewBtn:hover {
+  color: var(--color-sort-hover);
+}
+
+.viewBtn.active {
+  background: var(--color-sort-active-bg);
+  color: var(--color-sort-active-text);
+}
+
+.sortToggle {
+  display: flex;
+  gap: 0;
+  margin-top: 12px;
   background: var(--color-sort-bg);
   border-radius: 8px;
   padding: 3px;

@@ -5,9 +5,11 @@ interface HeaderProps {
   site: SiteConfig;
   sortOrder: 'newest' | 'oldest';
   onSortChange: (order: 'newest' | 'oldest') => void;
+  viewMode: 'timeline' | 'universe';
+  onViewChange: (mode: 'timeline' | 'universe') => void;
 }
 
-export function Header({ site, sortOrder, onSortChange }: HeaderProps) {
+export function Header({ site, sortOrder, onSortChange, viewMode, onViewChange }: HeaderProps) {
   return (
     <div className={styles.title}>
       <h1 className={styles.titleText}>{site.title}</h1>
@@ -43,20 +45,40 @@ export function Header({ site, sortOrder, onSortChange }: HeaderProps) {
           </a>
         )}
       </div>
-      <div className={styles.sortToggle}>
+
+      {/* View mode toggle */}
+      <div className={styles.viewToggle}>
         <button
-          className={`${styles.sortBtn} ${sortOrder === 'newest' ? styles.active : ''}`}
-          onClick={() => onSortChange('newest')}
+          className={`${styles.viewBtn} ${viewMode === 'timeline' ? styles.active : ''}`}
+          onClick={() => onViewChange('timeline')}
         >
-          最新
+          时间线
         </button>
         <button
-          className={`${styles.sortBtn} ${sortOrder === 'oldest' ? styles.active : ''}`}
-          onClick={() => onSortChange('oldest')}
+          className={`${styles.viewBtn} ${viewMode === 'universe' ? styles.active : ''}`}
+          onClick={() => onViewChange('universe')}
         >
-          最早
+          票根宇宙
         </button>
       </div>
+
+      {/* Sort toggle - only in timeline mode */}
+      {viewMode === 'timeline' && (
+        <div className={styles.sortToggle}>
+          <button
+            className={`${styles.sortBtn} ${sortOrder === 'newest' ? styles.active : ''}`}
+            onClick={() => onSortChange('newest')}
+          >
+            最新
+          </button>
+          <button
+            className={`${styles.sortBtn} ${sortOrder === 'oldest' ? styles.active : ''}`}
+            onClick={() => onSortChange('oldest')}
+          >
+            最早
+          </button>
+        </div>
+      )}
     </div>
   );
 }
