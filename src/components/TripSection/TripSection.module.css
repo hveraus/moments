@@ -23,6 +23,32 @@
   margin: 8px 0 0;
   font-weight: 300;
   transition: color 0.6s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mapBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-meta);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.mapBtn:hover {
+  opacity: 1;
+}
+
+.mapBtnActive {
+  opacity: 1;
+  color: var(--color-title);
 }
 
 .tickets {

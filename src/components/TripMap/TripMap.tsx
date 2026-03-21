@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { MapContainer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import type { LatLngBoundsExpression } from 'leaflet';
@@ -70,10 +70,27 @@ function FitBounds({ locations }: { locations: TripLocation[] }) {
 
 interface TripMapProps {
   locations: TripLocation[];
+  onClose: () => void;
 }
 
-export function TripMap({ locations }: TripMapProps) {
+export function TripMap({ locations, onClose }: TripMapProps) {
   if (locations.length === 0) return null;
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    },
+    [onClose],
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [handleKeyDown]);
 
   const center: [number, number] = [
     locations.reduce((s, l) => s + l.lat, 0) / locations.length,
@@ -81,35 +98,43 @@ export function TripMap({ locations }: TripMapProps) {
   ];
 
   return (
-    <div className={styles.mapWrap}>
-      <MapContainer
-        center={center}
-        zoom={11}
-        className={styles.map}
-        scrollWheelZoom={false}
-        zoomControl={false}
-        attributionControl={false}
-      >
-        <ThemeTileLayer />
-        <FitBounds locations={locations} />
-        {locations.map((loc) => (
-          <CircleMarker
-            key={`${loc.lat}-${loc.lng}`}
-            center={[loc.lat, loc.lng]}
-            radius={6}
-            pathOptions={{
-              color: '#fff',
-              weight: 2,
-              fillColor: '#e74c3c',
-              fillOpacity: 0.9,
-            }}
-          >
-            <Popup>
-              <span className={styles.popupText}>{loc.name}</span>
-            </Popup>
-          </CircleMarker>
-        ))}
-      </MapContainer>
+    <div className={styles.backdrop} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.closeBtn} onClick={onClose} aria-label="关闭地图">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 6L6 18" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </button>
+        <MapContainer
+          center={center}
+          zoom={11}
+          className={styles.map}
+          scrollWheelZoom={true}
+          zoomControl={false}
+          attributionControl={false}
+        >
+          <ThemeTileLayer />
+          <FitBounds locations={locations} />
+          {locations.map((loc) => (
+            <CircleMarker
+              key={`${loc.lat}-${loc.lng}`}
+              center={[loc.lat, loc.lng]}
+              radius={6}
+              pathOptions={{
+                color: '#fff',
+                weight: 2,
+                fillColor: '#e74c3c',
+                fillOpacity: 0.9,
+              }}
+            >
+              <Popup>
+                <span className={styles.popupText}>{loc.name}</span>
+              </Popup>
+            </CircleMarker>
+          ))}
+        </MapContainer>
+      </div>
     </div>
   );
 }
